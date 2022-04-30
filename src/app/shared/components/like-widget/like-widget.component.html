@@ -1,0 +1,23 @@
+<div class="like-widget-container" (appAction)="like()">
+  <fa-icon
+    role="button"
+    tabindex="0"
+    [attr.aria-describedby]="id"
+    size="1x"
+    [icon]="fonts.faThumbsUp">
+  </fa-icon>
+  <span
+    class="like-counter"
+    [attr.id]="id"
+    [attr.aria-label]="likes + ': people liked'"
+    aria-live="true"
+    aria-atomic="true"
+  >
+    {{ likes }}
+  </span>
+  <!-- [attr.aria-label] - faz com que o screen reader, em vez de ler só o número de likes, vai ler o texto do label adicionado. -->
+  <!-- [attr.aria-describedby] - vai ser descrito para ganhar foco com a tag span pelo id, quando o usuário dar tab em cima do icone like. -->
+  <!-- role="button" - faz com que a tag se comporte ou haja como botão. -->
+  <!-- aria-live - toda vez que o conteúdo da tag mudar, o screen reader do navegador vai conseguir anunciar o valor alterado. -->
+  <!-- aria-atomic - vai fazer o screen reader ler tudo que está dentro da tag span ou ler apenas o conteúdo que mudou dinamicamente. -->
+</div>
